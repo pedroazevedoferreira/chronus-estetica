@@ -15,8 +15,8 @@ export { INSTAGRAM_URL }
 
 export const nav = [
   { id: 'inicio', label: 'Início' },
+  { id: 'sobre', label: 'Sobre' },
   { id: 'tratamentos', label: 'Tratamentos' },
-  { id: 'sobre', label: 'Especialistas' },
   { id: 'resultados', label: 'Resultados' },
   { id: 'contato', label: 'Contato' },
 ]
@@ -40,12 +40,12 @@ export const team = [
 ]
 
 export const results = [
-  { image: 'result-nose.jpg', alt: 'Antes e depois de procedimento no nariz', label: 'Nariz' },
-  { image: 'result-lips.jpg', alt: 'Antes e depois de procedimento nos lábios', label: 'Lábios' },
-  { image: 'result-skin.jpg', alt: 'Antes e depois de tratamento de pele', label: 'Pele' },
+  { image: 'result-nose.jpg', alt: 'Antes e depois de procedimento no nariz' },
+  { image: 'result-lips.jpg', alt: 'Antes e depois de procedimento nos lábios' },
+  { image: 'result-skin.jpg', alt: 'Antes e depois de tratamento de pele' },
 ]
 
 export const hours = [
   { days: 'Segunda a sexta', time: '9h às 19h' },
-  { days: 'Sábado', time: 'até 13h' },
+  { days: 'Sábado', time: '9h às 13h' },
 ]

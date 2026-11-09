@@ -8,10 +8,11 @@ import { Brand } from './Brand'
 
 const sectionIds = nav.map(({ id }) => id)
 
-export function Header() {
+export function Header({ page }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const scrolled = useScrolled(10)
-  const active = useActiveSection(sectionIds)
+  const activeSection = useActiveSection(sectionIds, page)
+  const active = page === 'treatment' ? 'tratamentos' : activeSection
   const toggleRef = useRef(null)
   const close = () => setMenuOpen(false)
 

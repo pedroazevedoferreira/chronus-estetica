@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { bookLink, external, image, treatments } from '../data/content'
+import { image, treatments } from '../data/content'
 
 export function Treatments() {
   return <section className="treatments" id="tratamentos">
@@ -10,7 +10,7 @@ export function Treatments() {
         <p>Procedimentos faciais e corporais com avaliação personalizada, tecnologia e técnicas modernas.</p>
       </div>
       <div className="treatment-grid">
-        {treatments.map((item, i) => <a className="treatment-card" href={bookLink} {...external} key={item.title} data-reveal style={{ '--delay': `${i * 80}ms` }}>
+        {treatments.map((item, i) => <a className="treatment-card" href={`#/tratamento/${item.slug}`} key={item.slug} data-reveal style={{ '--delay': `${i * 80}ms` }}>
           <img src={image(item.photo)} alt="" loading="lazy" decoding="async" width="224" height="115"/>
           <div className="treatment-content"><h3>{item.title}</h3><p>{item.text}</p><span className="treatment-link">Conheça <ArrowRight size={14} aria-hidden="true"/></span></div>
         </a>)}

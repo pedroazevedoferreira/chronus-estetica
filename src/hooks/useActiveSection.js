@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
-export function useActiveSection(ids) {
+// `routeKey` re-attaches the observer when the page changes and the sections are re-rendered.
+export function useActiveSection(ids, routeKey) {
   const [active, setActive] = useState(ids[0])
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -9,6 +10,6 @@ export function useActiveSection(ids) {
     )
     ids.forEach((id) => { const el = document.getElementById(id); if (el) observer.observe(el) })
     return () => observer.disconnect()
-  }, [ids])
+  }, [ids, routeKey])
   return active
 }

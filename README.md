@@ -4,7 +4,19 @@ Site da **Chronus Estética** — estética facial e corporal no Centro de Niter
 
 🌐 **No ar:** https://pedroazevedoferreira.github.io/chronus-estetica/
 
-Feito com React + Vite. Uma página só, responsiva (celular, tablet e computador).
+Feito com React + Vite, responsivo (celular, tablet e computador). Página inicial com seções e uma
+página para cada tratamento (endereço `#/tratamento/<slug>`, ex.: `#/tratamento/estetica-facial`).
+
+## ⚠️ Conteúdo de exemplo para trocar
+
+Tudo marcado com `EXEMPLO` em [`src/data/content.js`](src/data/content.js) é fictício:
+
+- [ ] **Depoimentos** (`testimonials`) — troque pelos relatos reais (com autorização das pacientes) e
+      apague `example: true`. Enquanto houver algum exemplo, o site mostra "Depoimentos ilustrativos".
+- [ ] **Páginas de tratamento** (`treatments`) — indicações, procedimentos, duração, sessões e recuperação.
+- [ ] **Dúvidas frequentes** (`faq`) — respostas genéricas; revise com a Fernanda.
+- [ ] **WhatsApp** — veja abaixo.
+- [ ] **Fotos** — veja "Observações".
 
 ## Rodar no computador
 
@@ -37,7 +49,10 @@ Na primeira vez é preciso ativar o GitHub Pages: **Settings → Pages → Sourc
 ### WhatsApp
 
 Em [`src/siteConfig.js`](src/siteConfig.js), coloque o número só com dígitos, com 55 e o DDD (ex.: `5521999999999`).
-Enquanto estiver vazio, os botões de agendamento levam ao Instagram e mostram "Fale pelo Instagram".
+Enquanto estiver vazio, os botões de agendamento do site publicado levam ao Instagram e mostram "Fale pelo Instagram".
+
+No `npm run dev` o site usa um número **inválido** de demonstração só para você ver o visual com WhatsApp
+(botão verde flutuante e ícones). Esse número nunca vai para o site publicado.
 
 ## Estrutura
 
@@ -47,7 +62,8 @@ Enquanto estiver vazio, os botões de agendamento levam ao Instagram e mostram "
 │   ├── favicon.svg
 │   └── images/                    fotos usadas no site
 ├── src/
-│   ├── components/                uma seção por arquivo (Header, Hero, Treatments…)
+│   ├── components/                uma seção por arquivo (Header, Hero, Treatments, Testimonials, Faq…)
+│   │   └── TreatmentPage.jsx      página de cada tratamento
 │   ├── data/content.js            conteúdo editável (listas, links, horários)
 │   ├── hooks/                     comportamentos (rolagem, animações, menu ativo)
 │   ├── siteConfig.js              WhatsApp e Instagram
@@ -61,4 +77,8 @@ Enquanto estiver vazio, os botões de agendamento levam ao Instagram e mostram "
 ## Observações
 
 - Confirme a autorização das pacientes para publicar os registros de antes e depois.
-- As fotos atuais foram recortadas de materiais visuais e têm resolução baixa. Fotos originais da clínica deixam o site mais nítido — basta substituir os arquivos em `public/images/` mantendo os mesmos nomes.
+- As fotos atuais foram recortadas de materiais visuais e têm resolução baixa. Fotos originais da clínica deixam o site mais nítido — basta substituir os arquivos em `public/images/` mantendo os mesmos nomes:
+  - `fernanda-profile.jpg` — retrato vertical da Fernanda (topo e seção "Sobre"; ideal 900×1300 px ou mais)
+  - `treatment-facial.jpg`, `treatment-lips.jpg`, `treatment-body.jpg`, `treatment-skin.jpg` — um por tratamento (ideal 1200 px de largura)
+  - `clinic-room.jpg` — recepção/ambiente da clínica
+  - `result-*.jpg` — antes e depois

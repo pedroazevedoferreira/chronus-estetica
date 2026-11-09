@@ -20,7 +20,7 @@ const baseTitle = 'Chronus Estética | Você merece a sua melhor versão'
 function App() {
   const route = useHashRoute()
   const routeKey = route.page === 'treatment' ? route.slug : 'home'
-  const previousPage = useRef(route.page)
+  const previousPage = useRef(null)
   useReveal(routeKey)
   const showFloating = useScrolled(520)
 
@@ -31,11 +31,12 @@ function App() {
       window.scrollTo(0, 0)
     } else {
       document.title = baseTitle
-      // Coming back from a treatment page: the section only exists after this render, so scroll manually.
-      if (previousPage.current === 'treatment') {
+      // On first load or coming back from a treatment page the section only exists after this render,
+      // so the browser's own anchor jump missed it: scroll manually.
+      if (previousPage.current !== 'home') {
         const target = route.section && document.getElementById(route.section)
         if (target) target.scrollIntoView()
-        else window.scrollTo(0, 0)
+        else if (previousPage.current === 'treatment') window.scrollTo(0, 0)
       }
     }
     previousPage.current = route.page

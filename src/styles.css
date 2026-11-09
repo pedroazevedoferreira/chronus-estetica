@@ -124,18 +124,19 @@ h1 em, h2 em { font-style: normal; color: var(--caramel); }
   box-shadow: 0 30px 60px -30px rgba(74, 44, 30, .55);
   animation: fade 1.2s ease both;
 }
-.hero-arch img { width: 100%; height: 100%; object-fit: cover; object-position: center 10%; }
+.hero-arch img { width: 100%; height: 100%; object-fit: cover; object-position: 54% center; }
 .hero-ring { position: absolute; inset: -34px -48px 30% -34px; border: 1px solid rgba(255, 246, 235, .85); border-radius: 999px 999px 0 0; pointer-events: none; }
 .hero-ring::after { content: ''; position: absolute; width: 150px; height: 150px; right: -38px; top: 22%; border: 1px solid rgba(183, 123, 81, .35); border-radius: 50%; }
 .hero-name {
   position: absolute; left: -56px; bottom: 64px;
-  display: flex; flex-direction: column; gap: 2px;
-  padding: 14px 20px; border-radius: 14px;
-  background: rgba(252, 248, 243, .94); box-shadow: 0 16px 34px -18px rgba(74, 44, 30, .6);
+  display: flex; align-items: center; gap: 12px; max-width: 280px;
+  padding: 14px 18px 14px 14px; border-radius: 14px;
+  background: rgba(252, 248, 243, .95); box-shadow: 0 16px 34px -18px rgba(74, 44, 30, .6);
   animation: rise .9s .45s cubic-bezier(.2, .7, .2, 1) both;
 }
-.hero-name strong { font: 400 20px/1.15 var(--serif); color: var(--brown); }
-.hero-name span { color: var(--caramel-ink); font-size: 13px; }
+.hero-name > svg { flex: none; width: 40px; height: 40px; padding: 9px; border-radius: 50%; background: var(--sand); color: var(--caramel-ink); }
+.hero-name span { display: flex; flex-direction: column; color: var(--muted); font-size: 13px; line-height: 1.35; }
+.hero-name strong { font: 400 18px/1.2 var(--serif); color: var(--brown); }
 .hero-badge {
   position: absolute; right: -36px; top: 26%;
   display: flex; align-items: center; gap: 8px;
@@ -172,25 +173,20 @@ h1 em, h2 em { font-style: normal; color: var(--caramel); }
 /* ---------- About (Fernanda) ---------- */
 .about { background: var(--section); padding: clamp(56px, 7vw, 88px) 0; }
 .about-inner { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(40px, 6vw, 88px); align-items: center; max-width: 1040px; }
-/* Signature card: arch in the brand colours with a large monogram and the name in script. */
+/* Portrait in an arch with an offset outline, her name in script over a soft gradient. */
 .about-visual { position: relative; padding: 0 20px 20px 0; }
 .about-visual::before { content: ''; position: absolute; inset: 20px 0 0 20px; border: 1px solid rgba(183, 123, 81, .45); border-radius: 999px 999px 22px 22px; }
 .about-card {
-  position: relative; overflow: hidden; aspect-ratio: 4 / 5;
-  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
-  padding: 0 24px 44px; border-radius: 999px 999px 22px 22px;
-  background:
-    radial-gradient(ellipse 80% 55% at 50% 30%, rgba(255, 236, 214, .35) 0%, transparent 70%),
-    linear-gradient(160deg, #c99068 0%, #9c5f3a 55%, #6f4329 100%);
-  color: #fff6eb; text-align: center;
+  position: relative; overflow: hidden; aspect-ratio: 4 / 5; margin: 0;
+  border-radius: 999px 999px 22px 22px; background: #d7bda4;
   box-shadow: 0 28px 56px -30px rgba(74, 44, 30, .7);
 }
-.about-card::before { content: ''; position: absolute; inset: 16px; border: 1px solid rgba(255, 246, 235, .35); border-radius: 999px 999px 14px 14px; }
-.about-monogram { position: absolute; top: 9%; left: 50%; transform: translateX(-50%); font: italic 400 clamp(180px, 22vw, 280px)/1 var(--serif); color: rgba(255, 246, 235, .16); pointer-events: none; }
-.about-signature { position: relative; font: 400 clamp(46px, 5vw, 62px)/1 var(--script); color: #fff8ef; }
-.about-card-role { position: relative; margin-top: 10px; font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: #f6dcc4; }
-.about-card-line { position: relative; width: 48px; height: 1px; margin: 16px 0 12px; background: rgba(255, 246, 235, .55); }
-.about-card-reg { position: relative; font-size: 13px; letter-spacing: .12em; color: #f6dcc4; }
+.about-card img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.about-card::after { content: ''; position: absolute; inset: 45% 0 0; background: linear-gradient(180deg, transparent 0%, rgba(74, 44, 30, .82) 100%); }
+.about-card figcaption { position: absolute; z-index: 1; left: 0; right: 0; bottom: 26px; display: flex; flex-direction: column; align-items: center; color: #fff8ef; text-align: center; }
+.about-signature { font: 400 clamp(40px, 4.4vw, 54px)/1 var(--script); }
+.about-card-role { margin-top: 6px; font-size: 12.5px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: #f6dcc4; }
+.about-reg { position: absolute; z-index: 2; right: 2px; top: 30%; padding: 9px 16px; border-radius: 99px; background: var(--caramel-ink); color: #fff; font-size: 13px; font-weight: 500; letter-spacing: .06em; box-shadow: 0 10px 22px -12px rgba(122, 69, 38, .7); }
 .about h2 { font-size: clamp(40px, 4.4vw, 58px); line-height: 1; }
 .person-role { margin: 10px 0 0; color: var(--caramel-ink); font-size: 14px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
 .about-bio { margin: 20px 0 0; max-width: 520px; color: var(--muted); font-size: 16px; line-height: 1.6; }
@@ -330,7 +326,7 @@ main:focus { outline: none; }
 .tp-step-list p { margin: 0; color: var(--muted); font-size: 15px; }
 .tp-cta { background: var(--cocoa); color: #fff6eb; padding: 36px 0; }
 .tp-cta-inner { display: flex; align-items: center; gap: 24px; }
-.tp-monogram { width: 84px; height: 84px; flex: none; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255, 246, 235, .55); background: linear-gradient(160deg, #c99068, #9c5f3a); font: italic 400 30px/1 var(--serif); letter-spacing: .02em; color: #fff8ef; }
+.tp-avatar { width: 84px; height: 84px; flex: none; border-radius: 50%; object-fit: cover; object-position: center 15%; border: 3px solid rgba(255, 246, 235, .6); }
 .tp-cta h2 { color: #fff5e9; font-size: clamp(24px, 2.6vw, 32px); }
 .tp-cta p { margin: 4px 0 0; color: #f0d3b7; font-size: 14px; }
 .tp-cta .primary-button { margin-left: auto; background: #f7eee6; color: var(--brown); box-shadow: none; }
@@ -446,9 +442,10 @@ main:focus { outline: none; }
   .hero-portrait { width: 74%; margin-top: 36px; }
   .hero-ring { inset: -22px -26px 30% -22px; }
   .hero-ring::after { width: 96px; height: 96px; right: -30px; }
-  .hero-name { left: -22px; bottom: 36px; padding: 10px 14px; }
-  .hero-name strong { font-size: 17px; }
-  .hero-name span { font-size: 12px; }
+  .hero-name { left: -22px; bottom: 32px; max-width: 230px; padding: 10px 12px 10px 10px; gap: 10px; }
+  .hero-name > svg { width: 34px; height: 34px; padding: 8px; }
+  .hero-name strong { font-size: 15.5px; }
+  .hero-name span { font-size: 11.5px; }
   .hero-badge { right: -26px; top: 18%; padding: 8px 10px; font-size: 11.5px; }
 
   /* Treatments: swipeable row of large cards, like the desktop cards. */
@@ -474,8 +471,9 @@ main:focus { outline: none; }
   .about-inner { grid-template-columns: 1fr; gap: 40px; }
   .about-visual { width: 78%; margin-inline: auto; padding: 0 14px 14px 0; }
   .about-visual::before { inset: 14px 0 0 14px; }
-  .about-card { padding-bottom: 32px; }
-  .about-card-role, .about-card-reg { font-size: 11.5px; }
+  .about-card figcaption { bottom: 18px; }
+  .about-card-role { font-size: 11px; }
+  .about-reg { right: -4px; padding: 7px 12px; font-size: 12px; }
   .about h2 { font-size: 40px; }
   .about-bio { font-size: 15px; }
   .credentials li { font-size: 14.5px; }

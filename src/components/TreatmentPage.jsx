@@ -54,7 +54,7 @@ export function TreatmentPage({ slug }) {
 
     <section className="tp-cta">
       <div className="tp-cta-inner container" data-reveal>
-        <span className="tp-monogram" aria-hidden="true">FC</span>
+        <img className="tp-avatar" src={image(specialist.photo)} alt="" width="305" height="460" loading="lazy"/>
         <div>
           <h2>Agende sua avaliação com a {specialist.first}</h2>
           <p>{specialist.role} · {specialist.reg}</p>

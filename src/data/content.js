@@ -24,6 +24,15 @@ export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encod
 export const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(address)}&z=16&output=embed`
 export { INSTAGRAM_URL }
 
+// EXEMPLO: foto de banco de imagens (Unsplash, uso livre). Troque por uma foto da clínica:
+// coloque o arquivo em public/images e use `src: image('nome-da-foto.jpg')` (e apague `srcSet`).
+const unsplash = (w) => `https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=${w}&q=80`
+export const heroImage = {
+  src: unsplash(900),
+  srcSet: `${unsplash(600)} 600w, ${unsplash(900)} 900w, ${unsplash(1300)} 1300w`,
+  alt: 'Tratamento facial com aplicação de máscara',
+}
+
 export const nav = [
   { id: 'inicio', label: 'Início' },
   { id: 'sobre', label: 'Sobre' },

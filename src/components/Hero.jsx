@@ -1,5 +1,5 @@
-import { BadgeCheck } from 'lucide-react'
-import { benefits, image, specialist } from '../data/content'
+import { BadgeCheck, Sparkles } from 'lucide-react'
+import { benefits, heroImage, specialist } from '../data/content'
 import { BookButton } from './BookButton'
 
 export function Hero() {
@@ -14,12 +14,12 @@ export function Hero() {
 
     <figure className="hero-portrait">
       <span className="hero-ring" aria-hidden="true"/>
-      <div className="hero-arch"><img src={image(specialist.photo)} alt={`${specialist.name}, ${specialist.role}`} width="305" height="460" fetchPriority="high"/></div>
+      <div className="hero-arch"><img src={heroImage.src} srcSet={heroImage.srcSet} sizes="(max-width: 900px) 80vw, 420px" alt={heroImage.alt} width="900" height="600" fetchPriority="high"/></div>
       <figcaption className="hero-name">
-        <strong>{specialist.name}</strong>
-        <span>{specialist.role} · {specialist.reg}</span>
+        <Sparkles size={20} aria-hidden="true"/>
+        <span><strong>Avaliação personalizada</strong>Cada protocolo começa com uma conversa</span>
       </figcaption>
-      <span className="hero-badge"><BadgeCheck size={18} aria-hidden="true"/>Pós-graduada pela<br/>FCM/UERJ</span>
+      <span className="hero-badge"><BadgeCheck size={18} aria-hidden="true"/>{specialist.role}<br/>{specialist.reg}</span>
     </figure>
   </section>
 }

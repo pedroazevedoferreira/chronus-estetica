@@ -11,6 +11,8 @@ página para cada tratamento (endereço `#/tratamento/<slug>`, ex.: `#/tratament
 
 Tudo marcado com `EXEMPLO` em [`src/data/content.js`](src/data/content.js) é fictício:
 
+- [ ] **Foto do topo** (`heroImage`) — hoje é uma foto de banco de imagens (Unsplash). Troque por uma foto
+      da clínica ou de um atendimento.
 - [ ] **Depoimentos** (`testimonials`) — troque pelos relatos reais (com autorização das pacientes) e
       apague `example: true`. Enquanto houver algum exemplo, o site mostra "Depoimentos ilustrativos".
 - [ ] **Páginas de tratamento** (`treatments`) — indicações, procedimentos, duração, sessões e recuperação.

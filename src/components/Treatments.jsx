@@ -15,6 +15,7 @@ export function Treatments() {
           <div className="treatment-content"><h3>{item.title}</h3><p>{item.text}</p><span className="treatment-link">Conheça <ArrowRight size={14} aria-hidden="true"/></span></div>
         </a>)}
       </div>
+      <p className="swipe-hint" aria-hidden="true">Deslize para ver mais <ArrowRight size={14}/></p>
     </div>
   </section>
 }

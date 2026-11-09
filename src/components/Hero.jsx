@@ -1,4 +1,5 @@
-import { benefits, image, team } from '../data/content'
+import { BadgeCheck } from 'lucide-react'
+import { benefits, image, specialist } from '../data/content'
 import { BookButton } from './BookButton'
 
 export function Hero() {
@@ -6,20 +7,19 @@ export function Hero() {
     <div className="hero-copy">
       <p className="eyebrow">Estética com ciência, cuidado e resultados</p>
       <h1 id="hero-title">Você merece<br/>a sua melhor<br/><em>versão.</em></h1>
-      <p className="hero-description">Estética facial e corporal com profissionais qualificadas, tecnologia e um atendimento pensado para você.</p>
+      <p className="hero-description">Estética facial e corporal com uma biomédica esteta especializada, tecnologia e um atendimento pensado para você.</p>
       <BookButton>Agendar avaliação</BookButton>
       <ul className="benefits">{benefits.map(({ icon: Icon, text }) => <li key={text}><Icon aria-hidden="true"/>{text}</li>)}</ul>
     </div>
 
-    {/* Desktop: the composed portrait from the brand material. Mobile: individual arched portraits. */}
-    <figure className="hero-composition">
-      <img src={image('hero-composition.jpg')} alt="Fernanda Cavalcante, Biomédica Esteta (CRBM 34832), e Andrea Cavalcante, Esteticista Expert" width="594" height="400" fetchPriority="high"/>
+    <figure className="hero-portrait">
+      <span className="hero-ring" aria-hidden="true"/>
+      <div className="hero-arch"><img src={image(specialist.photo)} alt={`${specialist.name}, ${specialist.role}`} width="305" height="460" fetchPriority="high"/></div>
+      <figcaption className="hero-name">
+        <strong>{specialist.name}</strong>
+        <span>{specialist.role} · {specialist.reg}</span>
+      </figcaption>
+      <span className="hero-badge"><BadgeCheck size={18} aria-hidden="true"/>Pós-graduada pela<br/>FCM/UERJ</span>
     </figure>
-    <div className="hero-people">
-      {team.map((p) => <figure className={`hero-person hero-person-${p.key}`} key={p.key}>
-        <div className="hero-person-photo"><img src={image(p.photo)} alt="" width="300" height="460"/></div>
-        <figcaption><strong>{p.name}</strong><span>{p.role}{p.reg && ` · ${p.reg}`}</span></figcaption>
-      </figure>)}
-    </div>
   </section>
 }

@@ -1,5 +1,5 @@
-import { Clock3, Instagram, MapPin } from 'lucide-react'
-import { external, hours, image, INSTAGRAM_URL, mapsLink } from '../data/content'
+import { ArrowUpRight, Clock3, Instagram, MapPin } from 'lucide-react'
+import { external, hours, image, INSTAGRAM_URL, mapEmbed, mapsLink } from '../data/content'
 import { BookButton } from './BookButton'
 
 export function Contact() {
@@ -7,7 +7,7 @@ export function Contact() {
     <div className="contact-intro" data-reveal>
       <p className="eyebrow">Onde estamos</p>
       <h2>Centro, Niterói | RJ</h2>
-      <p className="location-line"><MapPin size={22} aria-hidden="true"/> Fácil acesso, em uma localização privilegiada no centro da cidade.</p>
+      <p className="location-line"><MapPin size={22} aria-hidden="true"/><span>Av. Ernani do Amaral Peixoto, Centro.<br/>Fácil acesso, em uma localização privilegiada.</span></p>
       <BookButton/>
     </div>
     <div className="clinic-image" data-reveal><img src={image('clinic-room.jpg')} alt="Recepção da Chronus Estética" loading="lazy" decoding="async" width="310" height="169"/></div>
@@ -21,6 +21,9 @@ export function Contact() {
         <a href={INSTAGRAM_URL} {...external}><Instagram aria-hidden="true"/>@chronus.estetica</a>
       </div>
     </div>
-    <a href={mapsLink} {...external} className="map-image" aria-label="Abrir localização no Google Maps"><img src={image('map-reference.jpg')} alt="" loading="lazy" decoding="async" width="197" height="169"/></a>
+    <div className="map-embed">
+      <iframe src={mapEmbed} title="Mapa: Av. Ernani do Amaral Peixoto, Centro, Niterói" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/>
+      <a href={mapsLink} {...external}>Como chegar <ArrowUpRight size={14} aria-hidden="true"/></a>
+    </div>
   </section>
 }

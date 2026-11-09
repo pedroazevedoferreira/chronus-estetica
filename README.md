@@ -29,7 +29,7 @@ Na primeira vez é preciso ativar o GitHub Pages: **Settings → Pages → Sourc
 | Quero mudar… | Arquivo |
 | --- | --- |
 | WhatsApp e Instagram | [`src/siteConfig.js`](src/siteConfig.js) |
-| Textos de tratamentos, equipe, resultados, horários e menu | [`src/data/content.js`](src/data/content.js) |
+| Textos de tratamentos, especialista, resultados, horários, endereço e menu | [`src/data/content.js`](src/data/content.js) |
 | Textos de cada seção | [`src/components/`](src/components) |
 | Cores, fontes e layout | [`src/styles.css`](src/styles.css) (cores no topo, em `:root`) |
 | Fotos | [`public/images/`](public/images) |

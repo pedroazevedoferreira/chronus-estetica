@@ -10,7 +10,10 @@ export const bookLink = WHATSAPP_NUMBER
 export const bookingLabel = WHATSAPP_NUMBER ? 'Agendar pelo WhatsApp' : 'Fale pelo Instagram'
 export const BookingIcon = WHATSAPP_NUMBER ? MessageCircle : Instagram
 export const external = { target: '_blank', rel: 'noreferrer' }
-export const mapsLink = 'https://maps.google.com/?q=Centro,+Niter%C3%B3i,+RJ'
+// Add the building number here once confirmed, e.g. 'Av. Ernani do Amaral Peixoto, 123 - Centro, Niterói - RJ'.
+export const address = 'Av. Ernani do Amaral Peixoto - Centro, Niterói - RJ'
+export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
+export const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(address)}&z=16&output=embed`
 export { INSTAGRAM_URL }
 
 export const nav = [
@@ -34,10 +37,20 @@ export const treatments = [
   { title: 'Tratamentos de Pele', text: 'Limpeza, rejuvenescimento e muito mais.', photo: 'treatment-skin.jpg' },
 ]
 
-export const team = [
-  { key: 'fernanda', name: 'Fernanda Cavalcante', role: 'Biomédica Esteta', reg: 'CRBM 34832', photo: 'fernanda-profile.jpg', bio: 'Formação em Biomedicina com especialização em Estética e Pós-graduação em Ciências Médicas pela FCM/UERJ.' },
-  { key: 'andrea', name: 'Andrea Cavalcante', role: 'Esteticista Expert', photo: 'andrea-profile.jpg', bio: 'Mais de 3 anos de atuação na área da beleza, especialista em tratamentos estéticos faciais e corporais não invasivos.' },
-]
+export const specialist = {
+  first: 'Fernanda',
+  last: 'Cavalcante',
+  name: 'Fernanda Cavalcante',
+  role: 'Biomédica Esteta',
+  reg: 'CRBM 34832',
+  photo: 'fernanda-profile.jpg',
+  bio: 'Mais do que procedimentos, Fernanda oferece escuta, orientação e um atendimento humanizado, com foco na sua autoestima e bem-estar. Cada tratamento começa com uma avaliação individual.',
+  credentials: [
+    'Graduação em Biomedicina',
+    'Especialização em Estética',
+    'Pós-graduação em Ciências Médicas — FCM/UERJ',
+  ],
+}
 
 export const results = [
   { image: 'result-nose.jpg', alt: 'Antes e depois de procedimento no nariz' },

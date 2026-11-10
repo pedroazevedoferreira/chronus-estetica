@@ -12,16 +12,13 @@ import { Treatments } from './components/Treatments'
 import { WhatsAppIcon } from './components/WhatsAppIcon'
 import { BookingIcon, bookingLabel, bookLink, external, hasWhatsApp, treatments } from './data/content'
 import { useHashRoute } from './hooks/useHashRoute'
-import { useReveal } from './hooks/useReveal'
 import { useScrolled } from './hooks/useScrolled'
 
 const baseTitle = 'Chronus Estética | Você merece a sua melhor versão'
 
 function App() {
   const route = useHashRoute()
-  const routeKey = route.page === 'treatment' ? route.slug : 'home'
   const previousPage = useRef(null)
-  useReveal(routeKey)
   const showFloating = useScrolled(520)
 
   useEffect(() => {

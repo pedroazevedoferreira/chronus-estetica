@@ -21,7 +21,6 @@ export function TreatmentPage({ slug }) {
       <div className="tp-hero-inner container">
         <div className="tp-hero-copy">
           <a className="tp-back" href="#tratamentos"><ArrowLeft size={16} aria-hidden="true"/> Todos os tratamentos</a>
-          <p className="eyebrow">Tratamentos</p>
           <h1>{item.title}</h1>
           <p className="tp-lead">{item.lead}</p>
           <BookButton>Agendar avaliação</BookButton>
@@ -33,12 +32,12 @@ export function TreatmentPage({ slug }) {
 
     <section className="tp-details">
       <div className="tp-details-inner container">
-        <div data-reveal>
-          <h2>Para quem é <em>indicado</em></h2>
+        <div>
+          <h2>Para quem é indicado</h2>
           <ul className="credentials">{item.indications.map((x) => <li key={x}><Check size={16} aria-hidden="true"/>{x}</li>)}</ul>
         </div>
-        <div data-reveal style={{ '--delay': '100ms' }}>
-          <h2>O que <em>fazemos</em></h2>
+        <div>
+          <h2>O que fazemos</h2>
           <ul className="credentials">{item.procedures.map((x) => <li key={x}><Check size={16} aria-hidden="true"/>{x}</li>)}</ul>
           <p className="tp-note">O protocolo ideal é definido na avaliação, de acordo com a sua pele, o seu corpo e os seus objetivos.</p>
         </div>
@@ -47,17 +46,17 @@ export function TreatmentPage({ slug }) {
 
     <section className="tp-steps">
       <div className="container">
-        <div className="center-heading" data-reveal><p className="eyebrow">Como funciona</p><h2>Do primeiro contato ao <em>resultado</em></h2></div>
-        <ol className="tp-step-list">{treatmentSteps.map((s, i) => <li key={s.title} data-reveal style={{ '--delay': `${i * 100}ms` }}><span>{String(i + 1).padStart(2, '0')}</span><h3>{s.title}</h3><p>{s.text}</p></li>)}</ol>
+        <div className="center-heading"><p className="eyebrow">Como funciona</p><h2>Do primeiro contato ao resultado</h2></div>
+        <ol className="tp-step-list">{treatmentSteps.map((s, i) => <li key={s.title}><span>{String(i + 1).padStart(2, '0')}</span><h3>{s.title}</h3><p>{s.text}</p></li>)}</ol>
       </div>
     </section>
 
     <section className="tp-cta">
-      <div className="tp-cta-inner container" data-reveal>
+      <div className="tp-cta-inner container">
         <img className="tp-avatar" src={image(specialist.photo)} alt="" width="305" height="460" loading="lazy"/>
         <div>
           <h2>Agende sua avaliação com a {specialist.first}</h2>
-          <p>{specialist.role} · {specialist.reg}</p>
+          <p>{specialist.role}, {specialist.reg}</p>
         </div>
         <BookButton/>
       </div>
@@ -65,8 +64,8 @@ export function TreatmentPage({ slug }) {
 
     <section className="tp-others">
       <div className="container">
-        <h2 data-reveal>Outros <em>tratamentos</em></h2>
-        <div className="tp-other-grid">{others.map((t) => <a key={t.slug} className="tp-other" href={`#/tratamento/${t.slug}`} data-reveal>
+        <h2>Outros tratamentos</h2>
+        <div className="tp-other-grid">{others.map((t) => <a key={t.slug} className="tp-other" href={`#/tratamento/${t.slug}`}>
           <img src={image(t.photo)} alt="" loading="lazy" width="224" height="115"/>
           <span><strong>{t.title}</strong>{t.text}</span>
           <ArrowRight size={18} aria-hidden="true"/>

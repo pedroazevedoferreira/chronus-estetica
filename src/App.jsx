@@ -5,6 +5,7 @@ import { Faq } from './components/Faq'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { Intro } from './components/Intro'
 import { Results } from './components/Results'
 import { Testimonials } from './components/Testimonials'
 import { TreatmentPage } from './components/TreatmentPage'
@@ -14,7 +15,7 @@ import { BookingIcon, bookingLabel, bookLink, external, hasWhatsApp, treatments 
 import { useHashRoute } from './hooks/useHashRoute'
 import { useScrolled } from './hooks/useScrolled'
 
-const baseTitle = 'Chronus Estética | Você merece a sua melhor versão'
+const baseTitle = 'Chronus Estética | Sua beleza, no seu tempo'
 
 function App() {
   const route = useHashRoute()
@@ -42,6 +43,7 @@ function App() {
   const skipToContent = (e) => { e.preventDefault(); document.getElementById('conteudo')?.focus() }
 
   return <>
+    <Intro/>
     <a className="skip-link" href="#conteudo" onClick={skipToContent}>Pular para o conteúdo</a>
     <Header page={route.page}/>
     <main id="conteudo" tabIndex={-1}>
